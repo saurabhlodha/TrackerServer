@@ -1,0 +1,22 @@
+<% title "Ambulances" %>
+<table>
+  <tr>
+    <th>Uid</th>
+    <th>Address</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+  <% for ambulance in @ambulances %>
+    <tr>
+      <td><%= ambulance.uid %></td>
+      <td><%= ambulance.address %></td>
+      <td><%= ambulance.latitude %></td>
+      <td><%= ambulance.longitude %></td>
+      <td><%= link_to "Show", ambulance %></td>
+      <td><%= link_to "Edit", edit_ambulance_path(ambulance) %></td>
+      <td><%= link_to "Destroy", ambulance, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Ambulance", new_ambulance_path %></p>

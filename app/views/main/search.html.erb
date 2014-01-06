@@ -1,0 +1,22 @@
+<html>
+
+<head>
+	<title>Search Page</title>
+</head>
+<body>
+	<div class="container">
+	
+	<div class = "row" align = "center">
+		<div class="offset4 span4">
+			<div class = "well">
+				<%= form_tag({controller: "main", action: "results"}, method: "get") do %>
+				<%= label_tag(:user_destination, "Enter Destination Area :") %>
+				<%= text_field_tag(:user_destination, nil, placeholder: 'e.g. Ganadham, Pune') %>
+				<%= submit_tag("Search") %>
+				<% end %>
+			</div> <!-- ./Well -->
+		</div> <!-- Offset4 span4 -->
+	</div> <!-- row -->
+</div> <!-- ./container -->
+</body>
+</html>

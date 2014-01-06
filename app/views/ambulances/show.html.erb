@@ -1,0 +1,24 @@
+<% title "Ambulance" %>
+
+<p>
+  <strong>Uid:</strong>
+  <%= @ambulance.uid %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @ambulance.address %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @ambulance.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @ambulance.longitude %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_ambulance_path(@ambulance) %> |
+  <%= link_to "Destroy", @ambulance, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", ambulances_path %>
+</p>
