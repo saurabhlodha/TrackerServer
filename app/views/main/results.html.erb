@@ -2,6 +2,8 @@
 <p>Find me in app/views/main/results.html.erb</p>
 <%= @destination %>
 <% @location.each do |i| %>
-<%= i %>
+<br />
+<%= @main.distance_to(i) %><br />
 <% end %>
 <%= @test %>
+<%= @x %>

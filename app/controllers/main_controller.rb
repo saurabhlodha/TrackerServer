@@ -7,7 +7,9 @@ class MainController < ApplicationController
 
   def results
   	@destination = params[:user_destination]
-  	@location = Geocoder.search("1 Twins Way, Minneapolis")
+  	@location = Ambulance.all
+    @main = Ambulance.find_by_uid(1)
+    @x = @main.distance_to('Mumbai')
   	if not Geocoder.search("1 Twins Way, Minneapolis").blank?
   		@test = 'Success'
   	else
