@@ -6,14 +6,14 @@ class MainController < ApplicationController
   end
 
   def results
-  	@destination = params[:user_destination]
+    @destination = Destination.find_by_uid(1)
+    if @destination.blank?
+      @destination = Destination.new
+      @destination.uid = 1
+    end
+  	@destination.address = params[:user_destination]
+    @destination.save!
   	@location = Ambulance.all
-    @main = Ambulance.find_by_uid(1)
-    @x = @main.distance_to('Mumbai')
-  	if not Geocoder.search("1 Twins Way, Minneapolis").blank?
-  		@test = 'Success'
-  	else
-  		@test = 'Failed'
-  	end
+    @x = @destination.distance_to('Mumbai')
   end
 end
