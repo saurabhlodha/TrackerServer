@@ -5,6 +5,16 @@ class MainController < ApplicationController
   def search
   end
 
+  def input
+    longitude = params[:longitude]
+    latitude = params[:latitude]
+    uid = params[:uid]
+    @ambulance = Ambulance.find_by_uid(uid)
+    @ambulance.longitude = longitude
+    @ambulance.latitude = latitude
+    @ambulance.save!
+  end
+
   def results
     @destination = Destination.find_by_uid(1)
     if @destination.blank?
@@ -14,6 +24,5 @@ class MainController < ApplicationController
   	@destination.address = params[:user_destination]
     @destination.save!
   	@location = Ambulance.all
-    @x = @destination.distance_to('Mumbai')
   end
 end

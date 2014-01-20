@@ -3,6 +3,7 @@ TrackerServer::Application.routes.draw do
   get "main/index"
   get "main/search"
   get "main/results"
+  get "main/input"
   get '/results' => 'main#results'
   root :to => "main#search"
   # The priority is based upon order of creation: first created -> highest priority.
